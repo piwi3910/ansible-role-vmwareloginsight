@@ -1,0 +1,6 @@
+---
+# handlers file for loginsight
+- name: restart liagentd
+  service:
+    name: liagentd
+    state: restarted

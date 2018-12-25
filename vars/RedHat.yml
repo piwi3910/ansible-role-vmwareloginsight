@@ -1,0 +1,2 @@
+---
+liserver_uri: "https://{{liserver}}/api/v1/agent/packages/types/rpm"

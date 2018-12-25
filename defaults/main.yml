@@ -1,0 +1,14 @@
+---
+# defaults file for loginsight
+# Ansible >= 2.5
+# FQDN of the vRLI server
+liserver: litest01.zoller.com
+# Protocol the agent should use for connectivity. CFAPI is default.
+liproto: cfapi
+# vRLI server port the agent should connect to.
+# 9000 is for CFAPI protol non-SSL
+liport: 9000
+# If SSL should be used. Options are 'no' or 'yes' with quotes.
+lissl: 'no'
+# If automatic updates of the vRLI agent will be allowed. Again, 'no' or 'yes'.
+liauto_update: 'yes'
