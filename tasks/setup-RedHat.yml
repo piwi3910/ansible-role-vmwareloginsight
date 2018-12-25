@@ -4,7 +4,7 @@
 
 - name: Get liagentd status
   debug:
-    msg: "Log Insight agent is {{ansible_facts.services['liagentd.service'].state}}"
+    msg: "Log Insight agent is {{ ansible_facts.services['liagentd.service'].state }}"
   register: liagentstatus
   ignore_errors: yes
   
@@ -20,7 +20,7 @@
       msg: "vRLI agent will now be installed."
 
   - name: Downloading vRLI agent locally
-    command: curl -k -o /tmp/liagent.rpm "{{liserver_uri}}"
+    command: curl -k -o /tmp/liagent.rpm "{{ liserver_uri }}"
 
   - name: Install package
     yum:
@@ -33,7 +33,7 @@
       path: /var/lib/loginsight-agent/liagent.ini
       section: server
       option: hostname
-      value: "{{liserver}}"
+      value: "{{ liserver }}"
       create: no
       state: present
       no_extra_spaces: yes
@@ -43,7 +43,7 @@
       path: /var/lib/loginsight-agent/liagent.ini
       section: server
       option: proto
-      value: "{{liproto}}"
+      value: "{{ liproto }}"
       create: no
       state: present
       no_extra_spaces: yes
@@ -53,7 +53,7 @@
       path: /var/lib/loginsight-agent/liagent.ini
       section: server
       option: port
-      value: "{{liport}}"
+      value: "{{ liport }}"
       create: no
       state: present
       no_extra_spaces: yes
@@ -63,7 +63,7 @@
       path: /var/lib/loginsight-agent/liagent.ini
       section: server
       option: ssl
-      value: "{{lissl}}"
+      value: "{{ lissl }}"
       create: no
       state: present
       no_extra_spaces: yes
@@ -73,7 +73,7 @@
       path: /var/lib/loginsight-agent/liagent.ini
       section: update
       option: auto_update
-      value: "{{liauto_update}}"
+      value: "{{ liauto_update }}"
       create: no
       state: present
       no_extra_spaces: yes
