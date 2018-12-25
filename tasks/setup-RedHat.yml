@@ -7,7 +7,7 @@
     msg: "Log Insight agent is {{ ansible_facts.services['liagentd.service'].state }}"
   register: liagentstatus
   ignore_errors: yes
-  
+
 - name: Agent check.
   debug:
     msg: "vRLI agent is already installed so skipping installation."
@@ -82,5 +82,5 @@
     file:
       path: /tmp/liagent.rpm
       state: absent
-  when: 
+  when:
     - liagentstatus is failed
