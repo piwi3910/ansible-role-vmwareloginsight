@@ -6,7 +6,7 @@ This role installs the VMware vRealize Log Insight agent on a system. It implies
 Requirements
 ------------
 
-Ansible >= 2.5 is required
+Ansible ≥ 2.5 is required
 
 Role Variables
 --------------
@@ -16,16 +16,14 @@ This role contains variables in two locations: defaults/main.yml and vars. Howev
 Dependencies
 ------------
 
-None.
+External VMware vRealize Log Insight appliance installed and online.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: all
       roles:
-         - loginsight
+         - chipzoller.vmware_loginsight
 
 License
 -------
