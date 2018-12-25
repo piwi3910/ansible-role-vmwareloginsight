@@ -1,6 +1,6 @@
 ---
 # defaults file for loginsight
-# Ansible >= 2.5
+# Ansible ≥ 2.5
 # FQDN of the vRLI server
 liserver: litest01.zoller.com
 # Protocol the agent should use for connectivity. CFAPI is default.
