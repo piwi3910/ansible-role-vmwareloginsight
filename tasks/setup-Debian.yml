@@ -20,11 +20,11 @@
       msg: "vRLI agent will now be installed."
 
   - name: Downloading vRLI agent locally
-    command: curl -k -o /tmp/liagent.rpm "{{ liserver_uri }}"
+    command: curl -k -o /tmp/liagent.deb "{{ liserver_uri }}"
 
   - name: Install package
-    yum:
-      name: /tmp/liagent.rpm
+    apt:
+      deb: /tmp/liagent.deb
       state: present
     register: installed
 
@@ -80,7 +80,7 @@
 
   - name: Remove temporary file
     file:
-      path: /tmp/liagent.rpm
+      path: /tmp/liagent.deb
       state: absent
   when:
     - liagentstatus is failed
