@@ -28,55 +28,20 @@
       state: present
     register: installed
 
-  - name: Set hostname
+  - name: Setup INI options
     ini_file:
       path: /var/lib/loginsight-agent/liagent.ini
-      section: server
-      option: hostname
-      value: "{{ liserver }}"
+      section: "{{ item.section }}"
+      option: "{{ item.option }}"
+      value: "{{ item.value }}"
       create: no
       state: present
       no_extra_spaces: yes
-
-  - name: Set protocol
-    ini_file:
-      path: /var/lib/loginsight-agent/liagent.ini
-      section: server
-      option: proto
-      value: "{{ liproto }}"
-      create: no
-      state: present
-      no_extra_spaces: yes
-
-  - name: Set port
-    ini_file:
-      path: /var/lib/loginsight-agent/liagent.ini
-      section: server
-      option: port
-      value: "{{ liport }}"
-      create: no
-      state: present
-      no_extra_spaces: yes
-
-  - name: Set SSL option
-    ini_file:
-      path: /var/lib/loginsight-agent/liagent.ini
-      section: server
-      option: ssl
-      value: "{{ lissl }}"
-      create: no
-      state: present
-      no_extra_spaces: yes
-
-  - name: Set automatic updates
-    ini_file:
-      path: /var/lib/loginsight-agent/liagent.ini
-      section: update
-      option: auto_update
-      value: "{{ liauto_update }}"
-      create: no
-      state: present
-      no_extra_spaces: yes
+    with_items:
+      - { section: 'server', option: 'hostname', value: '{{liserver}}'}
+      - { section: 'server', option: 'proto', value: '{{liproto}}'}
+      - { section: 'server', option: 'ssl', value: '{{lissl}}'}
+      - { section: 'update', option: 'auto_update', value: '{{liauto_update}}'}
 
   - name: Remove temporary file
     file:
