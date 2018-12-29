@@ -38,10 +38,10 @@
       state: present
       no_extra_spaces: yes
     with_items:
-      - { section: 'server', option: 'hostname', value: '{{liserver}}'}
-      - { section: 'server', option: 'proto', value: '{{liproto}}'}
-      - { section: 'server', option: 'ssl', value: '{{lissl}}'}
-      - { section: 'update', option: 'auto_update', value: '{{liauto_update}}'}
+      - { section: 'server', option: 'hostname', value: '{{ liserver }}'}
+      - { section: 'server', option: 'proto', value: '{{ liproto }}'}
+      - { section: 'server', option: 'ssl', value: '{{ lissl }}'}
+      - { section: 'update', option: 'auto_update', value: '{{ liauto_update }}'}
 
   - name: Remove temporary file
     file:
