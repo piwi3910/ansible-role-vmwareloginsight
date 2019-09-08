@@ -20,7 +20,10 @@
       msg: "vRLI agent will now be installed."
 
   - name: Downloading vRLI agent locally
-    command: curl -k -o /tmp/liagent.rpm "{{ liserver_uri }}"
+    get_url:
+      url: {{ liserver_uri }}
+      dest: /tmp/liagent.rpm
+      validate_certs: no
 
   - name: Install package
     yum:
