@@ -20,10 +20,10 @@
       msg: "vRLI agent will now be installed."
 
   - name: Downloading vRLI agent locally
-      get_url:
-        url: {{ liserver_uri }}
-        dest: /tmp/liagent.deb
-        validate_certs: no
+    get_url:
+      url: {{ liserver_uri }}
+      dest: /tmp/liagent.deb
+      validate_certs: no
 
   - name: Install package
     apt:
