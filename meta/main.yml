@@ -1,8 +1,8 @@
 galaxy_info:
   role_name: vmware_loginsight
-  author: Chip Zoller
+  author: Pascal Watteel
   description: Installs the VMware vRealize Log Insight agent.
-  company: Chip Zoller
+  company: Dell Technologies
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
