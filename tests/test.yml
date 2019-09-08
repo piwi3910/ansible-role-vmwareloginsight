@@ -1,5 +1,7 @@
 ---
 - hosts: localhost
   remote_user: root
+  become: yes
+  become_user: root
   roles:
-    - piwi3910.vmware_loginsight
+    - ansible-role-vmwareloginsight
