@@ -25,7 +25,7 @@ Example Playbook
 
     - hosts: all
       roles:
-         - chipzoller.vmware_loginsight
+         - piwi3910.vmware_loginsight
 
 License
 -------
@@ -35,4 +35,4 @@ MIT
 Author Information
 ------------------
 
-Feel free to contact me on GitHub (https://github.com/chipzoller) or Twitter (@chipzoller). All feedback is most welcome.
+Feel free to contact me on GitHub (https://github.com/piwi3910). All feedback is most welcome.
