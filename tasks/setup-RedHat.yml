@@ -20,7 +20,7 @@
       msg: "vRLI agent will now be installed."
 
   - name: Downloading vRLI agent locally
-    command: curl -k -o /tmp/liagent.rpm https://{{ liserver }}/api/v1/agent/packages/types/rpm
+    command: curl --connect-timeout 30 --retry 300 --retry-delay 5 -k -o /tmp/liagent.rpm https://{{ liserver }}/api/v1/agent/packages/types/rpm
 
   - name: Install package
     yum:
